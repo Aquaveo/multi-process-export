@@ -20,11 +20,12 @@ if __name__ == "__main__":
     query.get_xms_agent().set_retries(1)
     r = query.get('simulation_name')
     simulation_name = r['simulation_name'][0].get_as_string()
+    query.select('StandardInterfaceTemplate#Sim_Manager')
 
     sim_query_helper = SimQueryHelper(query)
-    sim_query_helper.get_geometry()
+    sim_query_helper.get_geometry(False)
     sim_query_helper.get_materials_coverage()
-    sim_query_helper.load_component_feature_ids(query, sim_query_helper.materials_component, TargetType.polygon)
+    sim_query_helper.load_component_feature_ids(query, sim_query_helper.material_component, TargetType.polygon)
     coverage_mapper = CoverageMapper(sim_query_helper, generate_snap=False)
     coverage_mapper.do_map()
 
