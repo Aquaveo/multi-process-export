@@ -23,13 +23,13 @@ give appropriate responses.
 
 The advantages to this approach include:
 
-- Performance can be improved when there are many files, or one of the files takes a long time to write.
-- While developing the model interface, a crash in one of the scripts will not cause the entire export operation to fail.
+- Performance can be improved when there are many files.
+- Performance can be improved when one of the files takes a long time to write.
 
 The drawbacks to this approach include:
 
 - It is harder to give feedback to the user on progress.
-- There is additional overhead in launching multiple scripts.
+- There is additional overhead in launching multiple scripts, which hinders performance.
 
 As a general rule, this approach to writing files for a simulation is discouraged. However, it
 it is appropriate to use this approach when the performance benefits of using multiple processes
