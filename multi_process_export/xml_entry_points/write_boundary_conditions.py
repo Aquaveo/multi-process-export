@@ -1,4 +1,4 @@
-"""Script to export Standard Interface Template simulation files."""
+"""Script to export a Standard Interface Template boundary conditions file."""
 # 1. Standard python modules
 
 # 2. Third party modules
