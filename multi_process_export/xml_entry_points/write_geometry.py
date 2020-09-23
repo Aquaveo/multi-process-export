@@ -18,6 +18,7 @@ if __name__ == "__main__":
     query.get_xms_agent().set_retries(1)
     r = query.get('simulation_name')
     simulation_name = r['simulation_name'][0].get_as_string()
+    # SimQueryHelper assumes that the context of the query is already at the simulation's hidden component.
     query.select('StandardInterfaceTemplate#Sim_Manager')
 
     sim_query_helper = SimQueryHelper(query)
